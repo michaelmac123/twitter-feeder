@@ -1,0 +1,114 @@
+*[class*="fed-tweets-"] {
+  background: ghostwhite;
+  height: 200px;
+  margin-bottom: 10px;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.tweet-title {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 5px 0;
+}
+.tweet-screenname {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.75em;
+  font-style: italic;
+  font-weight: 300;
+}
+.tweet-text {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.feeder-widget {
+  display: block;
+  height: 200px;
+  position: relative;
+  width: 100%;
+}
+
+.feeder-widget ul {
+  margin: 0;
+  height: 200px;
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+
+.feeder-widget ul li {
+  background: #ccc;
+  display: block;
+  float: left;
+  height: 179px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+button.control_prev, button.control_next {
+  position: absolute;
+  top: 40%;
+  z-index: 999;
+  display: block;
+  padding: 4% 3%;
+  width: auto;
+  height: auto;
+  background: #2a2a2a;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+button.control_prev:hover, button.control_next:hover {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease;
+}
+
+button.control_prev {
+  -webkit-transition: all 500ms; /* For Safari 3.1 to 6.0 */
+  -moz-transition: all 500ms;
+  transition: all 500ms;
+  border-radius: 0 2px 2px 0;
+  left:-20px;
+  opacity: 0;
+}
+
+button.control_next {
+  -webkit-transition: all 500ms; /* For Safari 3.1 to 6.0 */
+  -moz-transition: all 500ms;
+  transition: all 500ms;
+  right: 0;
+  border-radius: 2px 0 0 2px;
+  opacity: 0;
+  right:-20px;
+}
+.feeder-widget:hover {
+  cursor: pointer;
+}
+
+.feeder-widget:hover button.control_prev,
+.feeder-widget:hover button.control_next {
+  -webkit-transition: all 500ms; /* For Safari 3.1 to 6.0 */
+  -moz-transition: all 500ms;
+  transition: all 500ms;
+  opacity: 1;
+}
+
+.feeder-widget:hover button.control_prev {
+
+  left: 0;
+}
+.feeder-widget:hover button.control_next {
+  right: 0;
+}

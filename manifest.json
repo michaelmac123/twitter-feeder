@@ -1,0 +1,29 @@
+{
+  // Default to the latest version of chrome extensions
+  "manifest_version": 2,
+
+  // General ext info
+  "name": "Twitter_Feeder",
+  "description": "Navigate 15 most recent tweets with the Amazon hashtag",
+  "version": "1.0",
+
+  // sets permissions that extension has
+  "permissions": [
+    "activeTab"
+  ],
+
+  //sets path to content scripts and when they are injected onto the page
+  // local dev "matches": ["http://www.amazon.com/*"],
+  "content_scripts": [{
+      "matches": ["http://www.amazon.com/*", "http://*/amazon/"],
+      "css": ["style.css"],
+      "js": ["jquery.min.js", "contentScript.js"]
+  }],
+
+  // Whitelist assets
+  "web_accessible_resources": [
+    "style.css",
+    "jquery.min.js",
+    "script.js"
+  ]
+}
