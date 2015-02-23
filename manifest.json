@@ -16,9 +16,9 @@
   // local dev "matches": ["http://www.amazon.com/*"],
   "content_scripts": [{
       "matches": [
+        "http://*/amazon/*",
         "http://www.amazon.com/*",
         "https://www.amazon.com/*",
-        "http://dev.elocalhost.com/amazon/"
       ],
       "css": ["style.css"],
       "js": ["jquery.min.js", "contentScript.js"]
