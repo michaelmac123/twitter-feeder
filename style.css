@@ -73,11 +73,13 @@
 }
 
 #feeder-window {
+  background-color: #FFFFFF;
   overflow: hidden;
   position: relative;
 }
 
 .feeder-widget ul {
+  background-color: #FFFFFF;
   margin: 0;
   height: 220px;
   list-style: none;
@@ -87,6 +89,7 @@
 }
 
 .feeder-widget ul li {
+  background-color: #FFFFFF;
   height: 215px;
   margin: 1%;
   padding: 2% 3%;
@@ -103,6 +106,9 @@
 }
 
 .active {
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: rotateY(0deg);
+  -webkit-transition: 1s;
   transform-style: preserve-3d;
   transform: rotateY(0deg);
   transition: 1s;
@@ -114,6 +120,9 @@
 
 }
 .hidden {
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: rotateY(-180deg);
+  -webkit-transition: 1s;
   transform-style: preserve-3d;
   transform: rotateY(-180deg);
   transition: 1s;
@@ -143,6 +152,8 @@ button.control_prev:hover,
 button.control_next:hover {
   opacity: 0.8;
   -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 button.control_prev {
@@ -159,7 +170,7 @@ button.control_prev span {
   -moz-transition: all 500ms;
   transition: all 500ms;
   /*One Icon, two spots*/
-  -webkit-transform: rotate(180sdeg);
+  -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   transform: rotate(180deg);
   /*Twitter Blue*/
