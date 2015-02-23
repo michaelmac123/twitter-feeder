@@ -1,6 +1,6 @@
 *[class*="fed-tweets-"] {
   background: ghostwhite;
-  height: 200px;
+  height: 250px;
   margin-bottom: 10px;
   padding: 10px;
   position: relative;
@@ -8,33 +8,78 @@
 }
 
 .tweet-title {
+  background: transparent 35px center no-repeat url('images/Twitter_logo.png');
+  margin-top: 5px;
+  padding: 10px 0;
+}
+
+.tweet-title span {
+  color: #42A1DB; /*Twitter blue*/
+  display: block;
+  font-family: 'Lato';
+  font-style: italic;
+  font-size: 2em;
+  font-weight: 500;
+  padding-left: 25px;
+  position: relative;
+  text-align: center;
+  top: 3px;
+}
+
+.tweet-username {
+  color: #42A1DB; /*Twitter blue*/
+  display: block;
   font-family: 'Lato', sans-serif;
   font-size: 1.5em;
-  font-weight: 700;
-  margin: 5px 0;
-}
-.tweet-screenname {
-  font-family: 'Lato', sans-serif;
-  font-size: 1.75em;
   font-style: italic;
   font-weight: 300;
+  margin: 5px 0 0 0;
+}
+.tweet-screenname {
+  color: #42A1DB; /*Twitter blue*/
+  display: block;
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 500;
+  margin: 0px 0 5px 3px;
+}
+.tweet-createddate {
+  color: #42A1DB; /*Twitter blue*/
+  display: block;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1em;
+  font-style: italic;
+  font-weight: 500;
+  padding: 3px 30px 3px 0;
+  text-align: right;
 }
 .tweet-text {
+  border-top: 1px solid #e7e7e7;
+  color: #737373;
+  display: block;
   font-family: 'Lato', sans-serif;
   font-size: 1.1em;
   font-weight: 500;
+  padding: 5px;
 }
 
 .feeder-widget {
   display: block;
-  height: 200px;
+  height: 250px;
+  margin: 0 0 30px 0;
   position: relative;
   width: 100%;
 }
 
+#feeder-window {
+  overflow: hidden;
+  position: relative;
+}
+
 .feeder-widget ul {
   margin: 0;
-  height: 200px;
+  height: 220px;
   list-style: none;
   overflow: hidden;
   padding: 0;
@@ -42,36 +87,61 @@
 }
 
 .feeder-widget ul li {
-  background: #ccc;
-  display: block;
-  float: left;
-  height: 179px;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  text-align: center;
-  width: 100%;
+  height: 215px;
+  margin: 1%;
+  padding: 2% 3%;
+  position: absolute;
+  width: 97%;
 }
 
-button.control_prev, button.control_next {
-  position: absolute;
-  top: 40%;
-  z-index: 999;
-  display: block;
-  padding: 4% 3%;
-  width: auto;
-  height: auto;
-  background: #2a2a2a;
+.shown-tweet {
+  -webkit-transition: all 1s ease-in-out; /* For Safari 3.1 to 6.0 */
+  -moz-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  backface-visibility: hidden;
+  perspective: 300px;
+}
+
+.active {
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: 1s;
+  background: #FFFFFF;
+  /* Weird tracer box effect if this is a border instead Bug?*/
+  box-shadow: 0 0 0 1px #e7e7e7;
+  opacity: 1;
+  z-index: 1;
+
+}
+.hidden {
+  transform-style: preserve-3d;
+  transform: rotateY(-180deg);
+  transition: 1s;
+  background: #A8A8A8;
+  box-shadow: none;
+  opacity: 0;
+}
+
+button.control_prev,
+button.control_next {
+  border:none;
   color: #fff;
+  cursor: pointer;
+  display: block;
+  width: 60px;
+  height: 210px;
   text-decoration: none;
   font-weight: 600;
   font-size: 18px;
-  opacity: 0.8;
-  cursor: pointer;
+  outline: none;
+  position: absolute;
+  top: 20%;
+  z-index: 999;
 }
 
-button.control_prev:hover, button.control_next:hover {
-  opacity: 1;
+button.control_prev:hover,
+button.control_next:hover {
+  opacity: 0.8;
   -webkit-transition: all 0.2s ease;
 }
 
@@ -79,22 +149,56 @@ button.control_prev {
   -webkit-transition: all 500ms; /* For Safari 3.1 to 6.0 */
   -moz-transition: all 500ms;
   transition: all 500ms;
-  border-radius: 0 2px 2px 0;
-  left:-20px;
+  background:transparent;
+  left:-25px;
   opacity: 0;
+}
+
+button.control_prev span {
+  -webkit-transition: all 500ms; /* For Safari 3.1 to 6.0 */
+  -moz-transition: all 500ms;
+  transition: all 500ms;
+  /*One Icon, two spots*/
+  -webkit-transform: rotate(180sdeg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+  /*Twitter Blue*/
+  background:rgba(95, 169, 221, 0.55) 5px 20px url('images/chevron.png') no-repeat;
+  border-radius: 7%;
+  display: block;
+  height: 60px;
+  margin-left: -8px;
+  width: 30px;
+
 }
 
 button.control_next {
   -webkit-transition: all 500ms; /* For Safari 3.1 to 6.0 */
   -moz-transition: all 500ms;
   transition: all 500ms;
-  right: 0;
-  border-radius: 2px 0 0 2px;
+  background:transparent;
   opacity: 0;
-  right:-20px;
+  right:-25px;
 }
-.feeder-widget:hover {
-  cursor: pointer;
+
+button.control_next span {
+  -webkit-transition: all 500ms; /* For Safari 3.1 to 6.0 */
+  -moz-transition: all 500ms;
+  transition: all 500ms;
+  /*Twitter Blue*/
+  background:rgba(95, 169, 221, 0.55) 5px 20px url('images/chevron.png') no-repeat;
+  border-radius: 7%;
+  display: block;
+  height: 60px;
+  margin-left: 23px;
+  width: 30px;
+}
+button.control_prev span:hover,
+button.control_next span:hover {
+  -webkit-transition: all 500ms; /* For Safari 3.1 to 6.0 */
+  -moz-transition: all 500ms;
+  transition: all 500ms;
+  background:rgba(58, 136, 190, 1) 5px 20px url('images/chevron.png') no-repeat;
 }
 
 .feeder-widget:hover button.control_prev,
@@ -106,9 +210,8 @@ button.control_next {
 }
 
 .feeder-widget:hover button.control_prev {
-
-  left: 0;
+  left: -15px;
 }
 .feeder-widget:hover button.control_next {
-  right: 0;
+  right: -15px;
 }

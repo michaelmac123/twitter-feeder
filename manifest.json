@@ -15,13 +15,19 @@
   //sets path to content scripts and when they are injected onto the page
   // local dev "matches": ["http://www.amazon.com/*"],
   "content_scripts": [{
-      "matches": ["http://www.amazon.com/*", "http://*/amazon/"],
+      "matches": [
+        "http://www.amazon.com/*",
+        "https://www.amazon.com/*",
+        "http://dev.elocalhost.com/amazon/"
+      ],
       "css": ["style.css"],
       "js": ["jquery.min.js", "contentScript.js"]
   }],
 
   // Whitelist assets
   "web_accessible_resources": [
+    "images/*.png",
+    "images/*.svg",
     "style.css",
     "jquery.min.js",
     "script.js"
