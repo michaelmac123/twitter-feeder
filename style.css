@@ -56,6 +56,7 @@
 }
 .tweet-text {
   border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
   color: #737373;
   display: block;
   font-family: 'Lato', sans-serif;
@@ -89,7 +90,6 @@
 }
 
 .feeder-widget ul li {
-  background-color: #FFFFFF;
   height: 215px;
   margin: 1%;
   padding: 2% 3%;
@@ -112,7 +112,7 @@
   transform-style: preserve-3d;
   transform: rotateY(0deg);
   transition: 1s;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   /* Weird tracer box effect if this is a border instead Bug?*/
   box-shadow: 0 0 0 1px #e7e7e7;
   opacity: 1;
@@ -126,7 +126,7 @@
   transform-style: preserve-3d;
   transform: rotateY(-180deg);
   transition: 1s;
-  background: #A8A8A8;
+  background-color: #A8A8A8;
   box-shadow: none;
   opacity: 0;
 }
