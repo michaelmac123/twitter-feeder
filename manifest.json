@@ -5,7 +5,7 @@
   // General ext info
   "name": "Twitter_Feeder",
   "description": "Navigate 15 most recent tweets with the Amazon hashtag",
-  "version": "1.0.0",
+  "version": "1.0.1",
 
   // sets permissions that extension has
   "permissions": [
